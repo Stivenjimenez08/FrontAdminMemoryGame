@@ -1,0 +1,149 @@
+.table{
+    margin-top: 5rem;
+
+}
+/*Estilos para Tasks*/
+.contentCards{
+    margin-top: 3rem;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.note{
+    border: solid 2px black;
+    height: auto;
+    width: 17rem;
+    margin: .8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.note:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
+.noteTitle{
+    width: 13rem;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+.noteDescription{
+    margin-bottom: .5rem;
+    background: #ffff;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    resize: none;
+    height: 4rem;
+    width: 15rem;
+}
+.contDates{
+    margin-left: 2rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.noteDate, .notePriority, .noteState{
+    margin-left: .1rem;
+    margin-top: .3rem;
+}
+
+/*Estilos Task Board*/
+.containerBoard{
+    background: #ffff;
+    margin-top: 2.8rem;
+    height: 42.7rem;
+    display: flex;
+}
+.column{
+    height: auto;
+    width: 26.2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.noteBoard{
+    border: solid 2px black;
+    margin: .5rem 0 .5rem 0;
+    width: 23rem;
+    height: 10rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.titleBoard{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.descriptionNote{
+    width: 20rem;
+    font-size: 1rem;
+    text-align: center;
+}
+.titleNote{
+    width: 20rem;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*Estilos Task Filter*/
+.contFilter{
+    height: auto;
+    display: flex;
+    margin-top: 3rem;
+    justify-content: center;
+}
+.content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contentSelect{
+    display: flex;
+    margin-left: 2rem;
+    width: 55rem;
+    margin-right: 1.3rem;
+}
+.cont{
+    display: flex;
+    align-items: center;
+    width: 25rem;
+    height: 7rem;
+    margin-right: 2rem;
+}
+.filterCards{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+}
+.filterNote{
+    border: solid 2px black;
+    height: auto;
+    width: 17rem;
+    margin: .8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Estilos Input Date*/
+#expirationDate{
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+/*Estilos Calendar*/
+.contCalendar{
+    height: 90Vh;
+}
