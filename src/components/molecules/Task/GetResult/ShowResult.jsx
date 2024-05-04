@@ -10,7 +10,7 @@ import axios from 'axios';
 import '../../../StyleComponents.css';
 
 export const ShowResult = () => {
-  const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState(['']);
 
   useEffect(() => {
     const fetchData = async () => {
