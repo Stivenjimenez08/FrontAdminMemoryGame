@@ -37,7 +37,7 @@ export const Register = () => {
             .min(8, "Complete 8 caracteres en el campo contraseña"),
         })}
         onSubmit={async (values) => {
-          const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}user/createUser`, values);
+          const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}/api/user/createUser`, values);
           navigate("/");
           
             Swal.fire({

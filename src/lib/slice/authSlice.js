@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice, isRejectedWithValue } from "@reduxjs/too
 
 export const fetchLogin = createAsyncThunk('auth/login', async(formData) =>{
     try {
-        const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}auth/login`, formData)
+        const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}/api/auth/login`, formData)
         Cookies.set('token', response.data.token, {expires: 1})
         return response.data
     } catch (error) {
@@ -14,7 +14,7 @@ export const fetchLogin = createAsyncThunk('auth/login', async(formData) =>{
 
 export const fetchLogout = createAsyncThunk('auth/logout', async() =>{
     try {
-        const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}auth/logout`,{}, {
+        const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}/api/auth/logout`,{}, {
             headers:{
                 'x-token': Cookies.get('token')
             }
@@ -28,7 +28,7 @@ export const fetchLogout = createAsyncThunk('auth/logout', async() =>{
 
 export const fetchValidateToken = createAsyncThunk('auth/validateToken', async() =>{
     try {
-        const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}auth/validate-token`,{}, {
+        const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}/api/auth/validate-token`,{}, {
             headers:{
                 'x-token': Cookies.get('token')
             }

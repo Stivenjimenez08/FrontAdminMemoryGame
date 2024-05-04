@@ -15,7 +15,7 @@ export const ShowResult = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_URL_SERVER}game/getAllGames`);
+        const response = await axios.get(`${import.meta.env.VITE_URL_SERVER}/api/game/getAllGames`);
         setRows(response.data.games);
         console.log(rows)
       } catch (error) {

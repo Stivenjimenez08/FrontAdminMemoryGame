@@ -18,7 +18,7 @@ export const EditProfile = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `${import.meta.env.VITE_URL_SERVER}user/userById/${user?.id}`
+        `${import.meta.env.VITE_URL_SERVER}/api/user/userById/${user?.id}`
       );
       setData(response.data.users);
     };
@@ -55,7 +55,7 @@ export const EditProfile = () => {
         })}
         onSubmit={async (values) => {
           const response = await axios.put(
-            `${import.meta.env.VITE_URL_SERVER}user/updateUser`,
+            `${import.meta.env.VITE_URL_SERVER}/api/user/updateUser`,
             values
           );
           Swal.fire({

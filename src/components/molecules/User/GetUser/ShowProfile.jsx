@@ -14,7 +14,7 @@ export const ShowProfile = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_URL_SERVER}user/userById/${user?.id}`
+          `${import.meta.env.VITE_URL_SERVER}/api/user/userById/${user?.id}`
         );
         
         if (response.data.users.length > 0) {

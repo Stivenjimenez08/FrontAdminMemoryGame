@@ -51,7 +51,7 @@ export const EditPassword = () => {
 
         onSubmit={async ( values ) => {
           const response = await axios.put(
-            `${import.meta.env.VITE_URL_SERVER}user/updatePassword`,
+            `${import.meta.env.VITE_URL_SERVER}/api/user/updatePassword`,
             values
           );
 
