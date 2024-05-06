@@ -10,14 +10,13 @@ import axios from 'axios';
 import '../../../StyleComponents.css';
 
 export const ShowResult = () => {
-  const [rows, setRows] = useState(['']);
+  const [rows, setRows] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${import.meta.env.VITE_URL_SERVER}/api/game/getAllGames`);
         setRows(response.data.games);
-        console.log(rows)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -44,24 +43,30 @@ export const ShowResult = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row?.id} 
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {row?.name}
-                </TableCell>
-                <TableCell align="center">{row?.age}</TableCell>
-                <TableCell align="center">{row?.school.name}</TableCell>
-                <TableCell align="center">{row?.grade}</TableCell>
-                <TableCell align="center">{row?.hit}</TableCell>
-                <TableCell align="center">{row?.failure}</TableCell>
-                <TableCell align="center">{row?.note}</TableCell>
-                <TableCell align="center">{row?.score}</TableCell>
-                <TableCell align="center">{row?.playingTime}</TableCell>
+            {rows.length > 0 ? (
+              rows.map((row) => (
+                <TableRow
+                  key={row?.id} 
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row?.name}
+                  </TableCell>
+                  <TableCell align="center">{row?.age}</TableCell>
+                  <TableCell align="center">{row?.school?.name}</TableCell>
+                  <TableCell align="center">{row?.grade}</TableCell>
+                  <TableCell align="center">{row?.hit}</TableCell>
+                  <TableCell align="center">{row?.failure}</TableCell>
+                  <TableCell align="center">{row?.note}</TableCell>
+                  <TableCell align="center">{row?.score}</TableCell>
+                  <TableCell align="center">{row?.playingTime}</TableCell>
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={9} align="center">Cargando...</TableCell>
               </TableRow>
-            ))}
+            )}
           </TableBody>
         </Table>
       </TableContainer>
