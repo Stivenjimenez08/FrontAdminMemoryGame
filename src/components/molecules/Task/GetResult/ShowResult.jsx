@@ -40,6 +40,7 @@ export const ShowResult = () => {
               <TableCell align="center">Nota</TableCell>
               <TableCell align="center">Puntaje</TableCell>
               <TableCell align="center">Tiempo de juego</TableCell>
+              <TableCell align="center">Juego</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -60,6 +61,7 @@ export const ShowResult = () => {
                   <TableCell align="center">{row?.note}</TableCell>
                   <TableCell align="center">{row?.score}</TableCell>
                   <TableCell align="center">{row?.playingTime}</TableCell>
+                  <TableCell align="center">{row?.idGame}</TableCell>
                 </TableRow>
               ))
             ) : (
