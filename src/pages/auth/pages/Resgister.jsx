@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as Yup from "yup";
 import { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 import "../../../style.css";
 import Swal from "sweetalert2";
@@ -13,7 +13,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Button, Grid, IconButton, InputAdornment, Link, TextField } from "@mui/material";
 
 export const Register = () => {
-
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
